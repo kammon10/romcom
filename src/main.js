@@ -19,7 +19,7 @@ var savedCovers = [
 var currentCover = new Cover(coverImg, title, tagline1, tagline2);
 
 // Add your event listeners here 👇
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
   createRandomCover(currentCover);
 });
 
