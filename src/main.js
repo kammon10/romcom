@@ -7,6 +7,7 @@ var tagline2 = document.querySelector('.tagline-2');
 var buttonRandomCover = document.querySelector('.random-cover-button');
 var buttonMakeCover = document.querySelector('.make-new-button');
 var buttonSaveCover = document.querySelector('.save-cover-button');
+var buttonHome = document.querySelector('.home-button');
 
 var homeView = document.querySelector('.home-view');
 var formView = document.querySelector('.form-view');
@@ -26,7 +27,7 @@ buttonRandomCover.addEventListener('click', function() {
   createRandomCover(currentCover);
 });
 
-buttonMakeCover.addEventListener('click', changeView);
+buttonMakeCover.addEventListener('click', changeToFormView);
 
 // Create your event handlers and other functions here 👇
 function createRandomCover(cover) {
@@ -41,6 +42,7 @@ function changeToFormView() {
   homeView.classList.add('hidden');
   buttonRandomCover.classList.add('hidden');
   buttonSaveCover.classList.add('hidden');
+  buttonHome.classList.remove('hidden');
 }
 
 function getRandomIndex(array) {
