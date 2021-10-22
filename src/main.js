@@ -33,6 +33,8 @@ buttonMakeCover.addEventListener('click', changeToFormView);
 
 buttonViewSavedCovers.addEventListener('click', changeToSavedCoversView);
 
+buttonHome.addEventListener('click', changeToHomeView);
+
 // Create your event handlers and other functions here 👇
 function createRandomCover(cover) {
   cover.title.innerText = titles[getRandomIndex(titles)];
@@ -56,6 +58,15 @@ function changeToSavedCoversView() {
   buttonRandomCover.classList.add('hidden');
   buttonSaveCover.classList.add('hidden');
   buttonHome.classList.remove('hidden');
+}
+
+function changeToHomeView() {
+  savedCoversview.classList.add('hidden');
+  formView.classList.add('hidden');
+  homeView.classList.remove('hidden');
+  buttonRandomCover.classList.remove('hidden');
+  buttonSaveCover.classList.remove('hidden');
+  buttonHome.classList.add('hidden');
 }
 
 function getRandomIndex(array) {
