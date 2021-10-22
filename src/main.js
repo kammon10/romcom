@@ -3,8 +3,11 @@ var coverImg = document.querySelector('.cover-image');
 var title = document.querySelector('.cover-title');
 var tagline1 = document.querySelector('.tagline-1');
 var tagline2 = document.querySelector('.tagline-2');
+
 var buttonRandomCover = document.querySelector('.random-cover-button');
 var buttonMakeCover = document.querySelector('.make-new-button');
+var buttonSaveCover = document.querySelector('.save-cover-button');
+
 var homeView = document.querySelector('.home-view');
 var formView = document.querySelector('.form-view');
 
@@ -33,9 +36,11 @@ function createRandomCover(cover) {
   cover.tagline2.innerText = descriptors[getRandomIndex(descriptors)];
 };
 
-function changeView() {
+function changeToFormView() {
   formView.classList.remove('hidden');
   homeView.classList.add('hidden');
+  buttonRandomCover.classList.add('hidden');
+  buttonSaveCover.classList.add('hidden');
 }
 
 function getRandomIndex(array) {
