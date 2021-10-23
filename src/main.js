@@ -43,15 +43,10 @@ buttonSaveCover.addEventListener('click', saveCover);
 
 // Create your event handlers and other functions here 👇
 function saveCover() {
-  // var likedCover = new Cover();
-  // likedCover.cover = coverImg.src;
-  // likedCover.title = title.innerText;
-  // likedCover.tagline1 = tagline1.innerText;
-  // likedCover.tagline2 = tagline2.innerText;
-  // currentCover.cover = coverImg.src;
-  // currentCover.title = title.innerText;
-  // currentCover.tagline1 = tagline1.innerText;
-  // currentCover.tagline2 = tagline2.innerText;
+  currentCover.cover = coverImg.src;
+  currentCover.title = title.innerText;
+  currentCover.tagline1 = tagline1.innerText;
+  currentCover.tagline2 = tagline2.innerText;
   if (!savedCovers.includes(currentCover)) {
     savedCovers.push(currentCover);
   }
