@@ -24,7 +24,7 @@ var inputFieldDesc2 = document.querySelector('#descriptor2');
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
-var currentCover = new Cover();
+var currentCover = new Cover(coverImg.src, title.innerText, tagline1.innerText, tagline2.innerText);
 
 // Add your event listeners here 👇
 window.addEventListener('load', createRandomCover);
@@ -37,9 +37,14 @@ buttonViewSavedCovers.addEventListener('click', changeToSavedCoversView);
 
 buttonHome.addEventListener('click', changeToHomeView);
 
-buttonCreateNewBook.addEventListener('click', saveBook);
+buttonCreateNewBook.addEventListener('click', displayNewBook);
+
+buttonSaveCover.addEventListener('click', saveCover);
 
 // Create your event handlers and other functions here 👇
+function saveCover() {
+  savedCovers.push(currentCover);
+}
 
 function makeBook(book) {
   buttonCreateNewBook.type = 'button';
@@ -49,7 +54,8 @@ function makeBook(book) {
   book.tagline2 = inputFieldDesc2.value;
 }
 
-function saveBook() {
+//Refactor function names!!!!!!!!!!!!!!!!!!!
+function displayNewBook() {
   covers.push(inputFieldCover.value);
   titles.push(inputFieldTitle.value);
   descriptors.push(inputFieldDesc1.value);
