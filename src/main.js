@@ -13,7 +13,8 @@ var buttonCreateNewBook = document.querySelector('.create-new-book-button');
 
 var homeView = document.querySelector('.home-view');
 var formView = document.querySelector('.form-view');
-var savedCoversview = document.querySelector('.saved-view');
+var savedCoversView = document.querySelector('.saved-view');
+var savedCoversSection = document.querySelector('.saved-covers-section');
 
 var inputFieldCover = document.querySelector('#cover');
 var inputFieldTitle = document.querySelector('#title');
@@ -96,16 +97,31 @@ function changeToFormView() {
 }
 
 function changeToSavedCoversView() {
-  savedCoversview.classList.remove('hidden');
+  savedCoversView.classList.remove('hidden');
   formView.classList.add('hidden');
   homeView.classList.add('hidden');
   buttonRandomCover.classList.add('hidden');
   buttonSaveCover.classList.add('hidden');
   buttonHome.classList.remove('hidden');
+  displaySavedCoversSection();
+}
+
+function displaySavedCoversSection() {
+  savedCoversSection.innerHTML = '';
+  for (var i = 0; i < savedCovers.length; i++) {
+    savedCoversSection.innerHTML +=
+      `<div class="mini-cover">
+          <img class="mini-cover" src="${savedCovers[i].cover}">
+          <h2 class="cover-title">${savedCovers[i].title}</h2>
+          <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+          <img class="price-tag" src="./assets/price.png">
+          <img class="overlay" src="./assets/overlay.png">
+      </div>`;
+  }
 }
 
 function changeToHomeView() {
-  savedCoversview.classList.add('hidden');
+  savedCoversView.classList.add('hidden');
   formView.classList.add('hidden');
   homeView.classList.remove('hidden');
   buttonRandomCover.classList.remove('hidden');
