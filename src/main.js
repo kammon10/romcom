@@ -24,7 +24,7 @@ var inputFieldDesc2 = document.querySelector('#descriptor2');
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
-var currentCover = new Cover(coverImg.src, title.innerText, tagline1.innerText, tagline2.innerText);
+var currentCover = new Cover();
 
 // Add your event listeners here 👇
 window.addEventListener('load', createRandomCover);
@@ -43,6 +43,10 @@ buttonSaveCover.addEventListener('click', saveCover);
 
 // Create your event handlers and other functions here 👇
 function saveCover() {
+  currentCover.cover = coverImg.src;
+  currentCover.title = title.innerText;
+  currentCover.tagline1 = tagline1.innerText;
+  currentCover.tagline2 = tagline2.innerText;
   savedCovers.push(currentCover);
 }
 
