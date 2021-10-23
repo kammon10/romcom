@@ -24,12 +24,9 @@ var inputFieldDesc2 = document.querySelector('#descriptor2');
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
-var currentCover = new Cover(coverImg.value, title.value, tagline1.value, tagline2.value);
+var currentCover = new Cover();
 
 // Add your event listeners here 👇
-buttonCreateNewBook.addEventListener('click', saveBook);
-
-
 window.addEventListener('load', createRandomCover);
 
 buttonRandomCover.addEventListener('click', createRandomCover);
@@ -40,20 +37,19 @@ buttonViewSavedCovers.addEventListener('click', changeToSavedCoversView);
 
 buttonHome.addEventListener('click', changeToHomeView);
 
-
+buttonCreateNewBook.addEventListener('click', saveBook);
 
 // Create your event handlers and other functions here 👇
 //save the values in the input field to the respective arrays
 //1. grab the input in the text field.
 //2.
 function makeBook(book) {
-  
+  buttonCreateNewBook.type = 'button';
   book.cover = inputFieldCover.value;
   book.title = inputFieldTitle.value;
   book.tagline1 = inputFieldDesc1.value;
   book.tagline2 = inputFieldDesc2.value;
 }
-
 
 function saveBook() {
   covers.push(inputFieldCover.value);
@@ -61,16 +57,23 @@ function saveBook() {
   descriptors.push(inputFieldDesc1.value);
   descriptors.push(inputFieldDesc2.value);
   makeBook(currentCover);
-
+  displayCurrentCover();
+  changeToHomeView();
 }
 
+function displayCurrentCover() {
+  title.innerText = currentCover.title;
+  coverImg.src = currentCover.cover;
+  tagline1.innerText = currentCover.tagline1;
+  tagline2.innerText = currentCover.tagline2;
+}
 
 function createRandomCover() {
   title.innerText = titles[getRandomIndex(titles)];
   coverImg.src = covers[getRandomIndex(covers)];
   tagline1.innerText = descriptors[getRandomIndex(descriptors)];
   tagline2.innerText = descriptors[getRandomIndex(descriptors)];
-};
+}
 
 function changeToFormView() {
   formView.classList.remove('hidden');
@@ -100,4 +103,4 @@ function changeToHomeView() {
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
-};
+}
