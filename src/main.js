@@ -91,6 +91,7 @@ function createRandomCover() {
 function changeToFormView() {
   formView.classList.remove('hidden');
   homeView.classList.add('hidden');
+  savedCoversView.classList.add('hidden');
   buttonRandomCover.classList.add('hidden');
   buttonSaveCover.classList.add('hidden');
   buttonHome.classList.remove('hidden');
