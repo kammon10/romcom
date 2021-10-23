@@ -40,9 +40,7 @@ buttonHome.addEventListener('click', changeToHomeView);
 buttonCreateNewBook.addEventListener('click', saveBook);
 
 // Create your event handlers and other functions here 👇
-//save the values in the input field to the respective arrays
-//1. grab the input in the text field.
-//2.
+
 function makeBook(book) {
   buttonCreateNewBook.type = 'button';
   book.cover = inputFieldCover.value;
