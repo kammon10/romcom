@@ -43,11 +43,18 @@ buttonSaveCover.addEventListener('click', saveCover);
 
 // Create your event handlers and other functions here 👇
 function saveCover() {
-  currentCover.cover = coverImg.src;
-  currentCover.title = title.innerText;
-  currentCover.tagline1 = tagline1.innerText;
-  currentCover.tagline2 = tagline2.innerText;
-  savedCovers.push(currentCover);
+  // var likedCover = new Cover();
+  // likedCover.cover = coverImg.src;
+  // likedCover.title = title.innerText;
+  // likedCover.tagline1 = tagline1.innerText;
+  // likedCover.tagline2 = tagline2.innerText;
+  // currentCover.cover = coverImg.src;
+  // currentCover.title = title.innerText;
+  // currentCover.tagline1 = tagline1.innerText;
+  // currentCover.tagline2 = tagline2.innerText;
+  if (!savedCovers.includes(currentCover)) {
+    savedCovers.push(currentCover);
+  }
 }
 
 function makeBook(book) {
@@ -77,10 +84,12 @@ function displayCurrentCover() {
 }
 
 function createRandomCover() {
-  title.innerText = titles[getRandomIndex(titles)];
-  coverImg.src = covers[getRandomIndex(covers)];
-  tagline1.innerText = descriptors[getRandomIndex(descriptors)];
-  tagline2.innerText = descriptors[getRandomIndex(descriptors)];
+  var coverImg = covers[getRandomIndex(covers)];
+  var title = titles[getRandomIndex(titles)];
+  var tagline1 = descriptors[getRandomIndex(descriptors)];
+  var tagline2 = descriptors[getRandomIndex(descriptors)];
+  currentCover = new Cover(coverImg, title, tagline1, tagline2);
+  displayCurrentCover();
 }
 
 function changeToFormView() {
