@@ -91,6 +91,7 @@ function createRandomCover() {
 function changeToFormView() {
   formView.classList.remove('hidden');
   homeView.classList.add('hidden');
+  savedCoversView.classList.add('hidden');
   buttonRandomCover.classList.add('hidden');
   buttonSaveCover.classList.add('hidden');
   buttonHome.classList.remove('hidden');
@@ -110,7 +111,7 @@ function displaySavedCoversSection() {
   savedCoversSection.innerHTML = '';
   for (var i = 0; i < savedCovers.length; i++) {
     savedCoversSection.innerHTML +=
-      `<div class="mini-cover">
+      `<div class="mini-cover" id="${i}" ondblclick="deleteElement(this)">
           <img class="mini-cover" src="${savedCovers[i].cover}">
           <h2 class="cover-title">${savedCovers[i].title}</h2>
           <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
@@ -118,6 +119,11 @@ function displaySavedCoversSection() {
           <img class="overlay" src="./assets/overlay.png">
       </div>`;
   }
+}
+
+function deleteElement(div) {
+  savedCovers.splice(div.id, 1);
+  div.remove();
 }
 
 function changeToHomeView() {
