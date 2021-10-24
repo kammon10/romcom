@@ -1,5 +1,5 @@
 # RomCom
-![Home Page of website](/Users/ethantweitmann/Downloads/Screen Shot 2021-10-24 at 10.49.53 AM.png)
+![Home Page of website](https://frontend.turing.edu/projects/module-1/assets/romcom/romcom-random.png)
 
 The purpose of this website is three-fold:
 1. To be able to generate random romance novel covers.
@@ -31,5 +31,6 @@ Our website is designed for romance novel enthusiasts. Our site allows users to 
   will be return to the home screen view.
 
 ## Contributors
-Katie Ammon: [Katie's GitHub account](https://github.com/kammon10)
-Ethan Tweitmann: [Ethan's GitHub account](https://github.com/ectweitmann)
+Katie Ammon & Ethan Tweitmann
+- [Katie's GitHub account](https://github.com/kammon10)
+- [Ethan's GitHub account](https://github.com/ectweitmann)
